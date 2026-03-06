@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import CartButton from "../buttons/CartButton";
 
 const ProductCard = ({ product }) => {
   return (
@@ -65,6 +66,8 @@ const ProductCard = ({ product }) => {
           )}
         </div>
 
+        <CartButton product={{ ...product, _id: product._id.toString() }} />
+
         {/* Action Buttons */}
         <div className="card-actions gap-2">
           <Link href={`/products/${product._id}`} className="flex-1">
@@ -72,7 +75,6 @@ const ProductCard = ({ product }) => {
               View Details
             </button>
           </Link>
-          
         </div>
       </div>
     </div>
